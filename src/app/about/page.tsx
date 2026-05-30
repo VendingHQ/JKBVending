@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us | J-K-B Vending | DFW Family-Owned Vending",
-  description: "Meet John and Kayla — DFW locals with H-E-B grocery retail experience, bringing smart coolers and micro markets to North Texas businesses.",
+  description: "Meet John and Kayla — DFW locals with H-E-B grocery and retail experience, bringing smart coolers and micro markets to North Texas businesses.",
 };
 
 export default function AboutPage() {
