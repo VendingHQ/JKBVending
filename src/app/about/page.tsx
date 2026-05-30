@@ -1,10 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us | J-K-B Vending | DFW Family-Owned Vending",
-  description: "Meet John and Kayla — DFW locals with H-E-B grocery and retail experience, bringing smart coolers and micro markets to North Texas businesses.",
+  description: "Meet John and Kayla — DFW locals with H-E-B grocery retail experience, bringing smart coolers and micro markets to North Texas businesses.",
 };
 
 export default function AboutPage() {
@@ -23,11 +22,9 @@ export default function AboutPage() {
       <section className="bg-white py-24">
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div className="rounded-3xl overflow-hidden shadow-lg">
-            <Image
-              src="/john-and-kayla.png"
+            <img
+              src="https://i.imgur.com/3UPqbAb.png"
               alt="John and Kayla — Founders of J-K-B Vending"
-              width={600}
-              height={600}
               className="w-full h-full object-cover"
             />
           </div>
