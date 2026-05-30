@@ -9,33 +9,14 @@ export default function Footer() {
             <span className="text-2xl font-bold tracking-tight">J-K-B</span>
             <span className="text-sm font-light tracking-[0.2em] uppercase text-green-300">Vending</span>
           </div>
-          <p className="text-green-200 text-sm leading-relaxed">
+          <p className="text-green-200 text-sm leading-relaxed mb-4">
             Family-owned. DFW local.<br />
             Smart coolers & micro markets<br />
             for businesses across North Texas.
           </p>
-          <div className="flex gap-4 mt-4">
-            
-              href="https://www.instagram.com/jkbvending"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-300 hover:text-white transition-colors"
-              aria-label="Instagram"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-              </svg>
-            </a>
-            
-              href="tel:9725899165"
-              className="text-green-300 hover:text-white transition-colors"
-              aria-label="Call us"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.18 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
+          <div className="flex gap-4">
+            <a href="https://www.instagram.com/jkbvending" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 transition-colors rounded-full px-4 py-2 text-sm font-medium flex items-center gap-2">
+              <span>📸</span> Instagram
             </a>
           </div>
         </div>
