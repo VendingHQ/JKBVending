@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,11 +22,14 @@ export default function AboutPage() {
 
       <section className="bg-white py-24">
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-          <div className="bg-[#F9FBF9] rounded-3xl aspect-square flex items-center justify-center border border-gray-100">
-            <div className="text-center text-gray-300">
-              <div className="text-6xl mb-3">📸</div>
-              <div className="text-sm">Photo coming soon</div>
-            </div>
+          <div className="rounded-3xl overflow-hidden shadow-lg">
+            <Image
+              src="/john-and-kayla.png"
+              alt="John and Kayla — Founders of J-K-B Vending"
+              width={600}
+              height={600}
+              className="w-full h-full object-cover"
+            />
           </div>
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-5">Meet John & Kayla</h2>
