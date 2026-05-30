@@ -118,6 +118,51 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* TESTIMONIALS */}
+      <section className="bg-[#F9FBF9] py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="text-xs font-semibold tracking-widest uppercase text-[#2E7D32] mb-3 block">What People Are Saying</span>
+            <h2 className="text-4xl font-bold text-gray-900">Real People. Real Results.</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                quote: "Saves me a trip to the store. I get what I want here and even cheaper.",
+                name: "Lisa",
+                title: "Resident",
+              },
+              {
+                quote: "When you're hungry at 1AM and want a quick snack, it's nice coming downstairs to get a quick snack and not having to leave my apartment complex.",
+                name: "Jackie",
+                title: "Resident",
+              },
+              {
+                quote: "With pool season coming up, it's nice to grab quick snacks to have while laying by the pool.",
+                name: "Preston",
+                title: "Resident",
+              },
+            ].map((t) => (
+              <div key={t.name} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div className="text-[#2E7D32] text-3xl mb-4">"</div>
+                  <p className="text-gray-600 leading-relaxed text-sm mb-6">{t.quote}</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#E8F5E9] flex items-center justify-center text-[#2E7D32] font-bold text-sm">
+                    {t.name[0]}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900 text-sm">{t.name}</div>
+                    <div className="text-xs text-gray-400">{t.title}</div>
+                  </div>
+                  <div className="ml-auto text-yellow-400 text-sm">★★★★★</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* SERVICES */}
       <section className="bg-[#F9FBF9] py-24">
         <div className="max-w-6xl mx-auto px-6">
