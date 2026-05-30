@@ -23,10 +23,10 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div className="rounded-3xl overflow-hidden shadow-lg">
             <img
-  src="https://i.imgur.com/nJIy3ZJ.jpeg"
-  alt="John and Kayla — Founders of J-K-B Vending"
-  className="w-full h-full object-cover"
-/>
+              src="https://i.postimg.cc/fbzY9L4d/IMG-7427.avif"
+              alt="John and Kayla — Founders of J-K-B Vending"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-5">Meet John & Kayla</h2>
