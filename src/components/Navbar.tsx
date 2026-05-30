@@ -23,6 +23,9 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <a href="tel:9725899165" className="text-sm font-medium text-gray-600 hover:text-[#2E7D32] transition-colors">
+            (972) 589-9165
+          </a>
           <Link href="/contact" className="bg-[#2E7D32] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#1B5E20] transition-colors">
             Get a Free Machine
           </Link>
@@ -46,6 +49,9 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <a href="tel:9725899165" className="text-sm font-medium text-gray-700 hover:text-[#2E7D32]">
+            (972) 589-9165
+          </a>
           <Link href="/contact" className="bg-[#2E7D32] text-white text-sm font-semibold px-5 py-3 rounded-full text-center hover:bg-[#1B5E20] transition-colors" onClick={() => setOpen(false)}>
             Get a Free Machine
           </Link>
