@@ -128,17 +128,17 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                quote: "Saves me a trip to the store. I get what I want here and even cheaper.",
+                quote: "The machine and convenience of being onsite, saves me a trip to the store. I get what I want here and even cheaper than the grocery store.",
                 name: "Lisa",
                 title: "Resident",
               },
               {
-                quote: "When you're hungry at 1AM and want a quick snack, it's nice coming downstairs to get a quick snack and not having to leave my apartment complex.",
+                quote: "When you're hungry at 1 AM and want a quick snack, it's nice coming downstairs to get fresh options and not having to leave my apartment complex.",
                 name: "Jackie",
                 title: "Resident",
               },
               {
-                quote: "With pool season coming up, it's nice to grab quick snacks to have while laying by the pool.",
+                quote: "With pool season coming up, it's nice to have this onsite at my apartment.  I can get cold food and drinks while laying by the pool.",
                 name: "Preston",
                 title: "Resident",
               },
