@@ -97,7 +97,27 @@ export default function Home() {
           ))}
         </div>
       </section>
-
+{/* VIDEO */}
+      <section className="bg-white py-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <span className="text-xs font-semibold tracking-widest uppercase text-[#2E7D32] mb-3 block">See It In Action</span>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">What Is a Smart Cooler?</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              See exactly how our smart coolers work — and why DFW businesses love them.
+            </p>
+          </div>
+          <div className="rounded-3xl overflow-hidden shadow-xl aspect-video">
+            <iframe
+              src="https://player.vimeo.com/video/1098318710?autoplay=0&title=0&byline=0&portrait=0"
+              className="w-full h-full"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
       {/* SERVICES */}
       <section className="bg-[#F9FBF9] py-24">
         <div className="max-w-6xl mx-auto px-6">
