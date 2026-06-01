@@ -1,31 +1,24 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { name, company, email, phone, city, employees, message } = body;
-
-    if (!name || !email || !company) {
-      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
-    }
+    const { name, email, company, phone, message } = await req.json();
 
     await resend.emails.send({
-      from: "J-K-B Vending <onboarding@resend.dev>",
+      from: "J-K-B Vending <noreply@jkbvending.com>",
       to: "john@jkbvending.com",
-      subject: `New Lead: ${company} — ${city || "DFW"}`,
+      subject: `New Lead: ${company || name}`,
       html: `
-        <h2>New Lead from jkbvending.com</h2>
-        <table style="border-collapse:collapse;width:100%;font-family:sans-serif;font-size:14px;">
-          <tr><td style="padding:8px;font-weight:bold;color:#555;">Name</td><td style="padding:8px;">${name}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold;color:#555;">Company</td><td style="padding:8px;">${company}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold;color:#555;">Email</td><td style="padding:8px;"><a href="mailto:${email}">${email}</a></td></tr>
-          <tr><td style="padding:8px;font-weight:bold;color:#555;">Phone</td><td style="padding:8px;">${phone || "Not provided"}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold;color:#555;">City</td><td style="padding:8px;">${city || "Not provided"}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold;color:#555;">Employees</td><td style="padding:8px;">${employees || "Not provided"}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold;color:#555;">Message</td><td style="padding:8px;">${message || "None"}</td></tr>
+        <h2>New Contact Form Submission</h2>
+        <table cellpadding="8" style="border-collapse:collapse;">
+          <tr><td><strong>Name</strong></td><td>${name}</td></tr>
+          <tr><td><strong>Email</strong></td><td>${email}</td></tr>
+          <tr><td><strong>Company</strong></td><td>${company || "Not provided"}</td></tr>
+          <tr><td><strong>Phone</strong></td><td>${phone || "Not provided"}</td></tr>
+          <tr><td><strong>Message</strong></td><td>${message || "None"}</td></tr>
         </table>
       `,
     });
