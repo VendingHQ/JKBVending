@@ -1,48 +1,65 @@
 import type { Metadata } from "next";
-import { DM_Sans, Playfair_Display } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
-const dmSans = DM_Sans({
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  variable: "--font-dm-sans",
-  weight: ["300", "400", "500", "600", "700"],
 });
 
-const playfair = Playfair_Display({
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  variable: "--font-playfair",
-  weight: ["700"],
 });
 
 export const metadata: Metadata = {
-  title: "J-K-B Vending | Smart Coolers & Micro Markets | DFW",
-  description:
-    "Family-owned vending company serving DFW. Smart coolers, micro markets, and pantry service for businesses in Wylie, Plano, Frisco, Richardson & Collin County.",
-  keywords:
-    "vending machine Plano TX, smart cooler Frisco TX, micro market DFW, vending service Collin County, vending Wylie TX",
+  title: "J-K-B Vending | Smart Coolers & Micro Markets in DFW",
+  description: "Family-owned smart cooler and micro market operator serving DFW and Collin County. 25+ years of H-E-B grocery experience. Fresh, reliable, local.",
+  keywords: ["vending", "smart cooler", "micro market", "DFW vending", "Collin County vending", "Plano vending", "Frisco vending", "Wylie vending"],
+  authors: [{ name: "J-K-B Vending" }],
+  creator: "J-K-B Vending",
+  metadataBase: new URL("https://www.jkbvending.com"),
   openGraph: {
-    title: "J-K-B Vending | Smart Coolers & Micro Markets | DFW",
-    description:
-      "Family-owned. DFW local. Smart coolers and micro markets for businesses across Plano, Frisco, Wylie & Collin County.",
+    title: "J-K-B Vending | Smart Coolers & Micro Markets in DFW",
+    description: "Family-owned smart cooler and micro market operator serving DFW and Collin County. Fresh, reliable, local.",
     url: "https://www.jkbvending.com",
     siteName: "J-K-B Vending",
+    images: [
+      {
+        url: "/apple-touch-icon.png",
+        width: 1000,
+        height: 1000,
+        alt: "J-K-B Vending Logo",
+      },
+    ],
+    locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary",
+    title: "J-K-B Vending | Smart Coolers & Micro Markets in DFW",
+    description: "Family-owned smart cooler and micro market operator serving DFW and Collin County.",
+    images: ["/apple-touch-icon.png"],
+  },
+  icons: {
+    icon: "/apple-touch-icon.png",
+    apple: "/apple-touch-icon.png",
+    shortcut: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} ${playfair.variable} font-sans antialiased`}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
       </body>
     </html>
   );
