@@ -1,0 +1,14 @@
+{
+  "name": "J-K-B Vending",
+  "short_name": "JKB Vending",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "1000x1000",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#2d6a2d",
+  "background_color": "#2d6a2d",
+  "display": "standalone"
+}
