@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   {
@@ -44,8 +45,17 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
         <div className="relative max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 bg-white/10 text-green-200 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
-              🤝 Family-Owned · DFW Local
+            <div className="flex items-center gap-4 mb-6">
+              <Image
+                src="/logo.png"
+                alt="J-K-B Vending Logo"
+                width={72}
+                height={72}
+                className="rounded-2xl shadow-lg"
+              />
+              <div className="inline-flex items-center gap-2 bg-white/10 text-green-200 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full">
+                🤝 Family-Owned · DFW Local
+              </div>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white leading-[1.1] mb-6 text-balance">
               Your Team Deserves a Better{" "}
