@@ -43,54 +43,59 @@ export default function Home() {
           }}
         />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
-        <div className="relative max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="flex items-center gap-4 mb-6">
-              <Image
-                src="/logo.png"
-                alt="J-K-B Vending Logo"
-                width={72}
-                height={72}
-                className="rounded-2xl shadow-lg"
-              />
-              <div className="inline-flex items-center gap-2 bg-white/10 text-green-200 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full">
-                🤝 Family-Owned · DFW Local
-              </div>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-white leading-[1.1] mb-6 text-balance">
-              Your Team Deserves a Better{" "}
-              <span className="text-[#66BB6A]">Break Room.</span>
-            </h1>
-            <p className="text-green-100 text-lg leading-relaxed mb-8 max-w-lg">
-              J-K-B Vending brings smart coolers and micro markets to DFW businesses — fully stocked, locally serviced, and always free to your company.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="bg-white text-[#1B5E20] font-bold text-base px-8 py-4 rounded-full hover:bg-green-50 transition-colors text-center shadow-lg">
-                Get a Free Machine →
-              </Link>
-              <Link href="/services" className="border border-white/40 text-white font-medium text-base px-8 py-4 rounded-full hover:bg-white/10 transition-colors text-center">
-                See Our Services
-              </Link>
-            </div>
+        <div className="relative max-w-6xl mx-auto px-6 py-24 w-full">
+
+          {/* CENTERED BRAND MOMENT */}
+          <div className="flex flex-col items-center text-center mb-16">
+            <Image
+              src="/logo.png"
+              alt="J-K-B Vending Logo"
+              width={120}
+              height={120}
+              className="rounded-3xl shadow-2xl mb-5"
+            />
+            <h2 className="text-2xl font-bold text-white tracking-tight mb-1">J-K-B Vending</h2>
+            <p className="text-green-300 text-xs font-semibold tracking-[0.3em] uppercase">Family-Owned · DFW Local</p>
           </div>
-          <div className="hidden md:block">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 text-white">
-              <div className="text-5xl mb-4">🧊</div>
-              <h3 className="text-xl font-bold mb-2">Smart Cooler Placement</h3>
-              <p className="text-green-200 text-sm leading-relaxed mb-6">
-                We handle delivery, setup, stocking, and service. You just enjoy happy employees.
+
+          {/* HERO CONTENT */}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-5xl md:text-6xl font-bold text-white leading-[1.1] mb-6 text-balance">
+                Your Team Deserves a Better{" "}
+                <span className="text-[#66BB6A]">Break Room.</span>
+              </h1>
+              <p className="text-green-100 text-lg leading-relaxed mb-8 max-w-lg">
+                J-K-B Vending brings smart coolers and micro markets to DFW businesses — fully stocked, locally serviced, and always free to your company.
               </p>
-              <div className="space-y-3">
-                {["Free installation & setup", "Cashless payment ready", "Real-time inventory monitoring", "Local same-day service"].map((item) => (
-                  <div key={item} className="flex items-center gap-3 text-sm">
-                    <span className="text-[#66BB6A] font-bold">✓</span>
-                    <span className="text-green-100">{item}</span>
-                  </div>
-                ))}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact" className="bg-white text-[#1B5E20] font-bold text-base px-8 py-4 rounded-full hover:bg-green-50 transition-colors text-center shadow-lg">
+                  Get a Free Machine →
+                </Link>
+                <Link href="/services" className="border border-white/40 text-white font-medium text-base px-8 py-4 rounded-full hover:bg-white/10 transition-colors text-center">
+                  See Our Services
+                </Link>
               </div>
-              <Link href="/contact" className="mt-6 block bg-[#66BB6A] text-white font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#43A047] transition-colors text-center">
-                Check Availability
-              </Link>
+            </div>
+            <div className="hidden md:block">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 text-white">
+                <div className="text-5xl mb-4">🧊</div>
+                <h3 className="text-xl font-bold mb-2">Smart Cooler Placement</h3>
+                <p className="text-green-200 text-sm leading-relaxed mb-6">
+                  We handle delivery, setup, stocking, and service. You just enjoy happy employees.
+                </p>
+                <div className="space-y-3">
+                  {["Free installation & setup", "Cashless payment ready", "Real-time inventory monitoring", "Local same-day service"].map((item) => (
+                    <div key={item} className="flex items-center gap-3 text-sm">
+                      <span className="text-[#66BB6A] font-bold">✓</span>
+                      <span className="text-green-100">{item}</span>
+                    </div>
+                  ))}
+                </div>
+                <Link href="/contact" className="mt-6 block bg-[#66BB6A] text-white font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#43A047] transition-colors text-center">
+                  Check Availability
+                </Link>
+              </div>
             </div>
           </div>
         </div>
