@@ -10,7 +10,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/IMG_2911.png.PNG"
+            src="/logo.png"
             alt="J-K-B Vending Logo"
             width={40}
             height={40}
