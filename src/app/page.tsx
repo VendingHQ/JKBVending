@@ -54,8 +54,7 @@ export default function Home() {
               height={300}
               className="rounded-3xl shadow-2xl mb-5"
             />
-            <h2 className="text-2xl font-bold text-white tracking-tight mb-1">J-K-B Vending</h2>
-            <p className="text-green-300 text-xs font-semibold tracking-[0.3em] uppercase">Family-Owned · DFW Local</p>
+             <p className="text-green-300 text-sm font-semibold tracking-[0.3em] uppercase">Family Owned and Operated · Est. 2025</p>
           </div>
 
           {/* HERO CONTENT */}
