@@ -97,7 +97,8 @@ export default function Home() {
           ))}
         </div>
       </section>
-{/* VIDEO */}
+
+      {/* VIDEO */}
       <section className="bg-white py-20">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-10">
@@ -108,16 +109,17 @@ export default function Home() {
             </p>
           </div>
           <div className="rounded-3xl overflow-hidden shadow-xl aspect-video">
-            <iframe
-              src="https://player.vimeo.com/video/1098318710?autoplay=0&title=0&byline=0&portrait=0"
-              className="w-full h-full"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-            />
+            <video
+              className="w-full h-full object-cover"
+              controls
+              playsInline
+            >
+              <source src="/hahademo.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </section>
+
       {/* TESTIMONIALS */}
       <section className="bg-[#F9FBF9] py-20">
         <div className="max-w-6xl mx-auto px-6">
@@ -163,6 +165,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* SERVICES */}
       <section className="bg-[#F9FBF9] py-24">
         <div className="max-w-6xl mx-auto px-6">
