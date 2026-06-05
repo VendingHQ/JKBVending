@@ -50,8 +50,8 @@ export default function Home() {
             <Image
               src="/logo.png"
               alt="J-K-B Vending Logo"
-              width={120}
-              height={120}
+              width={225}
+              height={225}
               className="rounded-3xl shadow-2xl mb-5"
             />
             <h2 className="text-2xl font-bold text-white tracking-tight mb-1">J-K-B Vending</h2>
