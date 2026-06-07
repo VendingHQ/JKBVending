@@ -15,6 +15,21 @@ export const metadata: Metadata = {
     siteName: "J-K-B Vending",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://www.jkbvending.com/apple-touch-icon.png",
+        width: 1000,
+        height: 1000,
+        alt: "J-K-B Vending Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "J-K-B Vending | Smart Coolers & Micro Markets in DFW",
+    description:
+      "Family-owned smart cooler and micro market operator serving DFW offices, apartment communities, hotels, and healthcare facilities.",
+    images: ["https://www.jkbvending.com/apple-touch-icon.png"],
   },
 };
 
