@@ -1,26 +1,381 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+import type { Metadata } from "next";
+import Link from "next/link";
 
-:root {
-  --green-dark: #1B5E20;
-  --green: #2E7D32;
-  --green-mid: #388E3C;
-  --green-light: #66BB6A;
-  --green-pale: #E8F5E9;
-}
+export const metadata: Metadata = {
+  title: "J-K-B Vending | Smart Coolers & Micro Markets in DFW",
+  description:
+    "Family-owned smart cooler and micro market operator serving DFW offices, apartment communities, hotels, and healthcare facilities. Local, fresh, free to your property.",
+  keywords:
+    "vending, smart cooler, micro market, DFW vending, Collin County vending, apartment vending, hotel vending, Plano vending, Frisco vending, Wylie vending",
+  openGraph: {
+    title: "J-K-B Vending | Smart Coolers & Micro Markets in DFW",
+    description:
+      "Family-owned smart cooler and micro market operator serving DFW offices, apartment communities, hotels, and healthcare facilities. Fresh, reliable, local.",
+    url: "https://www.jkbvending.com",
+    siteName: "J-K-B Vending",
+    locale: "en_US",
+    type: "website",
+  },
+};
 
-html {
-  scroll-behavior: smooth;
-}
+const testimonials = [
+  {
+    quote:
+      "The machine and convenience of being onsite saves me a trip to the store. I get what I want here and even cheaper than the grocery store.",
+    name: "Lisa",
+    role: "Apartment Resident",
+    initial: "L",
+  },
+  {
+    quote:
+      "When you're hungry at 1 AM and want a quick snack, it's nice coming downstairs to get fresh options and not having to leave my apartment complex.",
+    name: "Jackie",
+    role: "Apartment Resident",
+    initial: "J",
+  },
+  {
+    quote:
+      "With pool season coming up, it's nice to have this onsite at my apartment. I can get cold food and drinks while laying by the pool.",
+    name: "Preston",
+    role: "Apartment Resident",
+    initial: "P",
+  },
+];
 
-body {
-  color: #1a1a1a;
-  background: #ffffff;
-}
+const whoWeServe = [
+  {
+    icon: "🏢",
+    title: "Offices & Businesses",
+    description:
+      "Keep your team fueled without lifting a finger. Smart coolers and micro markets for teams of any size.",
+  },
+  {
+    icon: "🏠",
+    title: "Apartment Communities",
+    description:
+      "A premium amenity your residents will actually use — and rave about. Perfect for lobbies and common areas.",
+  },
+  {
+    icon: "🏨",
+    title: "Hotels & Extended Stay",
+    description:
+      "24/7 fresh food and drinks for guests without the overhead of a full food service operation.",
+  },
+  {
+    icon: "🏥",
+    title: "Healthcare & Medical",
+    description:
+      "Reliable service for staff, patients, and visitors. We keep your machine stocked so you can focus on care.",
+  },
+  {
+    icon: "🏭",
+    title: "Manufacturing & Industrial",
+    description:
+      "High-volume restocking built around your shift schedule. Zero downtime, zero hassle.",
+  },
+  {
+    icon: "🏫",
+    title: "Schools & Institutions",
+    description:
+      "Fresh, healthy options for staff and students. We curate products that fit your community's needs.",
+  },
+];
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+const services = [
+  {
+    icon: "🧊",
+    title: "Smart Coolers",
+    description:
+      "AI-powered coolers that track inventory in real time. Perfect for 15–75 person teams or any property with steady foot traffic. No cost to you.",
+  },
+  {
+    icon: "🏪",
+    title: "Micro Markets",
+    description:
+      "Open-concept self-serve markets with 100+ SKUs of snacks, drinks, and fresh food. Ideal for 75+ employees or large apartment communities.",
+  },
+  {
+    icon: "☕",
+    title: "Pantry Service",
+    description:
+      "We stock your break room shelves with snacks and beverages so your team or residents never run out.",
+  },
+];
+
+const cities = [
+  "Wylie", "Plano", "Frisco", "Richardson",
+  "McKinney", "Allen", "Garland", "Collin County",
+  "Rockwall", "Sachse",
+];
+
+const whyItems = [
+  { icon: "🏠", label: "Locally Owned", desc: "Based in Wylie, TX. We live and work in DFW." },
+  { icon: "🛒", label: "Grocery Expertise", desc: "H-E-B veterans. We know product curation." },
+  { icon: "⚡", label: "Fast Service", desc: "Same-day response. No national wait times." },
+  { icon: "🤝", label: "No Contracts", desc: "30-day agreement. We earn your business monthly." },
+];
+
+export default function HomePage() {
+  return (
+    <main className="min-h-screen">
+
+      {/* HERO */}
+      <section className="bg-[#1B5E20] text-white px-6 py-20 text-center">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-green-300 text-sm font-semibold uppercase tracking-widest mb-4">
+            Family Owned and Operated · Est. 2025
+          </p>
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+            Fresh Food &amp; Drinks,<br />Right Where People Need Them.
+          </h1>
+          <p className="text-green-100 text-lg md:text-xl max-w-2xl mx-auto mb-8">
+            J-K-B Vending brings smart coolers and micro markets to DFW offices,
+            apartment communities, hotels, healthcare facilities, and more —
+            fully stocked, locally serviced, and always free to your property.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <Link
+              href="/contact"
+              className="bg-white text-[#1B5E20] font-bold px-8 py-4 rounded-lg hover:bg-green-50 transition"
+            >
+              Get a Free Machine →
+            </Link>
+            <Link
+              href="/services"
+              className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-[#1B5E20] transition"
+            >
+              See Our Services
+            </Link>
+          </div>
+          {/* Property type pills */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              { icon: "🏢", label: "Offices & Workplaces" },
+              { icon: "🏠", label: "Apartment Communities" },
+              { icon: "🏨", label: "Hotels & Extended Stay" },
+              { icon: "🏥", label: "Healthcare Facilities" },
+            ].map((t) => (
+              <span
+                key={t.label}
+                className="bg-white/10 border border-white/20 text-white text-sm px-4 py-2 rounded-full"
+              >
+                {t.icon} {t.label}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VIDEO */}
+      <section className="bg-[#E8F5E9] px-6 py-16 text-center">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[#2E7D32] text-sm font-semibold uppercase tracking-widest mb-2">
+            See It In Action
+          </p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            What Is a Smart Cooler?
+          </h2>
+          <p className="text-gray-600 mb-8">
+            See exactly how our smart coolers work — and why DFW properties love them.
+          </p>
+          <video
+            src="/hahademo.mp4"
+            controls
+            playsInline
+            className="w-full rounded-2xl shadow-lg"
+          />
+        </div>
+      </section>
+
+      {/* WHO WE SERVE */}
+      <section className="bg-white px-6 py-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-[#2E7D32] text-sm font-semibold uppercase tracking-widest mb-2">
+              Who We Serve
+            </p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              The Right Solution for Every Property
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Whether you manage a corporate office, an apartment community, a hotel,
+              or a healthcare facility — we have a solution that fits your space and your people.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whoWeServe.map((item) => (
+              <div
+                key={item.title}
+                className="bg-[#E8F5E9] rounded-2xl p-6 hover:shadow-md transition"
+              >
+                <div className="text-4xl mb-3">{item.icon}</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/contact"
+              className="inline-block bg-[#2E7D32] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#1B5E20] transition"
+            >
+              Check Availability for Your Property →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="bg-[#E8F5E9] px-6 py-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-[#2E7D32] text-sm font-semibold uppercase tracking-widest mb-2">
+              What People Are Saying
+            </p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Real People. Real Results.</h2>
+            <p className="text-gray-600">
+              Heard from residents at our active apartment locations in DFW.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((t) => (
+              <div key={t.name} className="bg-white rounded-2xl p-6 shadow-sm">
+                <div className="text-yellow-400 text-lg mb-3">★★★★★</div>
+                <p className="text-gray-700 text-sm italic mb-6">&ldquo;{t.quote}&rdquo;</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#2E7D32] text-white flex items-center justify-center font-bold text-sm">
+                    {t.initial}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900 text-sm">{t.name}</div>
+                    <div className="text-gray-500 text-xs">{t.role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section className="bg-white px-6 py-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-[#2E7D32] text-sm font-semibold uppercase tracking-widest mb-2">
+              What We Offer
+            </p>
+            <h2 className="text-3xl font-bold text-gray-900">
+              Break Room &amp; Amenity Solutions
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {services.map((s) => (
+              <div key={s.title} className="bg-[#E8F5E9] rounded-2xl p-6">
+                <div className="text-4xl mb-3">{s.icon}</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{s.title}</h3>
+                <p className="text-gray-600 text-sm">{s.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/services"
+              className="inline-block border-2 border-[#2E7D32] text-[#2E7D32] font-bold px-8 py-4 rounded-lg hover:bg-[#2E7D32] hover:text-white transition"
+            >
+              View All Services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY JKB */}
+      <section className="bg-[#E8F5E9] px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-[#2E7D32] text-sm font-semibold uppercase tracking-widest mb-2">
+              Why J-K-B
+            </p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              We&apos;re Not a National Chain. We&apos;re Your Neighbors.
+            </h2>
+            <p className="text-gray-600 mb-2">
+              John and Kayla founded J-K-B Vending right here in Wylie, TX. With 25+ years of
+              H-E-B grocery retail experience, we know food, we know freshness, and we know what
+              it takes to keep any property stocked with products people actually want — whether
+              that&apos;s an office break room, an apartment lobby, or a hotel corridor.
+            </p>
+            <p className="text-gray-600 mb-6">
+              When you call us, you get us — not a call center in another state.
+            </p>
+            <Link
+              href="/about"
+              className="inline-block border-2 border-[#2E7D32] text-[#2E7D32] font-bold px-6 py-3 rounded-lg hover:bg-[#2E7D32] hover:text-white transition"
+            >
+              Meet John &amp; Kayla →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
+            {whyItems.map((w) => (
+              <div key={w.label} className="bg-white rounded-xl p-5 flex items-start gap-4">
+                <span className="text-3xl">{w.icon}</span>
+                <div>
+                  <div className="font-bold text-gray-900">{w.label}</div>
+                  <div className="text-gray-500 text-sm">{w.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICE AREA */}
+      <section className="bg-white px-6 py-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-[#2E7D32] text-sm font-semibold uppercase tracking-widest mb-2">
+            Service Area
+          </p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Proudly Serving DFW</h2>
+          <p className="text-gray-600 mb-8">
+            We cover the full DFW Metroplex with a focus on Collin County and surrounding cities.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            {cities.map((c) => (
+              <span
+                key={c}
+                className="bg-[#E8F5E9] text-[#2E7D32] font-medium px-4 py-2 rounded-full text-sm"
+              >
+                📍 {c}
+              </span>
+            ))}
+          </div>
+          <Link
+            href="/locations"
+            className="inline-block border-2 border-[#2E7D32] text-[#2E7D32] font-bold px-8 py-4 rounded-lg hover:bg-[#2E7D32] hover:text-white transition"
+          >
+            See Full Service Area
+          </Link>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="bg-[#1B5E20] text-white px-6 py-20 text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Upgrade Your Property?
+          </h2>
+          <p className="text-green-100 text-lg mb-8">
+            We&apos;ll assess your space, recommend the right solution, and handle everything —
+            at no cost to your property.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block bg-white text-[#1B5E20] font-bold px-10 py-4 rounded-lg text-lg hover:bg-green-50 transition"
+          >
+            Get a Free Machine Today →
+          </Link>
+        </div>
+      </section>
+
+    </main>
+  );
 }
