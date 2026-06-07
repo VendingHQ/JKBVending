@@ -42,12 +42,18 @@ export default function Footer() {
               <p className="text-green-100 text-sm">Wylie, TX — Serving DFW</p>
             </div>
             
-              <a href="https://www.instagram.com/jkbvending"
+              href="https://www.instagram.com/jkbvending"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
             >
-              Instagram: @jkbvending
+              <img
+                src="https://cdn.simpleicons.org/instagram/white"
+                alt="Instagram"
+                width={16}
+                height={16}
+              />
+              @jkbvending
             </a>
           </div>
 
