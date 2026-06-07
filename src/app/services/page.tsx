@@ -1,17 +1,34 @@
-import Link from "next/link";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Services | J-K-B Vending | Smart Coolers & Micro Markets DFW",
-  description: "Smart coolers, micro markets, and pantry service for DFW businesses. Free placement, local service, no contracts.",
+  description:
+    "Smart coolers, micro markets, and pantry service for DFW offices, apartment communities, hotels, and healthcare facilities. Free placement, local service, no long contracts.",
+  openGraph: {
+    title: "Services | J-K-B Vending",
+    description:
+      "Smart coolers, micro markets, and pantry service for DFW offices, apartment communities, hotels, and more.",
+    url: "https://www.jkbvending.com/services",
+    siteName: "J-K-B Vending",
+    type: "website",
+  },
 };
 
 const services = [
   {
     icon: "🧊",
+    tag: "Best for 15–75 people or any steady-traffic property",
     title: "Smart Coolers",
-    subtitle: "Best for 15–75 employees",
-    color: "bg-blue-50 border-blue-100",
+    description:
+      "Our smart coolers are the perfect solution for small-to-mid size teams and residential common areas. Sleek, modern, and stocked with products your employees or residents actually want — curated by our H-E-B grocery veterans.",
+    bestFor: [
+      "Office break rooms (15–75 employees)",
+      "Apartment lobbies & clubhouses",
+      "Hotel corridors & common areas",
+      "Healthcare waiting rooms",
+      "Fitness centers & gyms",
+    ],
     features: [
       "AI-powered inventory tracking",
       "Beverages, snacks & fresh food",
@@ -20,13 +37,20 @@ const services = [
       "Free installation & restocking",
       "HAHA Innovation machines",
     ],
-    desc: "Our smart coolers are the perfect solution for small-to-mid size teams. Sleek, modern, and stocked with products your employees actually want — curated by our H-E-B grocery veterans.",
   },
   {
     icon: "🏪",
+    tag: "Best for 75+ employees or large residential communities",
     title: "Micro Markets",
-    subtitle: "Best for 75+ employees",
-    color: "bg-green-50 border-green-100",
+    description:
+      "Transform your break room or amenity space into a full self-serve market. Your employees or residents get the convenience of a corner store without leaving the building — and it's completely free to your property.",
+    bestFor: [
+      "Large offices (75+ employees)",
+      "Large apartment complexes",
+      "Extended-stay hotels",
+      "Corporate campuses",
+      "Manufacturing & industrial facilities",
+    ],
     features: [
       "100+ SKU open-concept market",
       "Fresh food, snacks & beverages",
@@ -35,13 +59,20 @@ const services = [
       "Free setup & management",
       "Custom product selection",
     ],
-    desc: "Transform your break room into a full self-serve market. Employees get the convenience of a corner store without leaving the building — and it's completely free to your company.",
   },
   {
     icon: "☕",
+    tag: "Great for any size team or property",
     title: "Pantry Service",
-    subtitle: "Great for any size team",
-    color: "bg-amber-50 border-amber-100",
+    description:
+      "Keep your team or residents fueled without the overhead. We stock and manage your break room pantry or common area shelving on a regular schedule so you never have to think about it.",
+    bestFor: [
+      "Small offices & teams",
+      "Property management offices",
+      "Boutique hotels",
+      "Community rooms & clubhouses",
+      "Any space without room for a full machine",
+    ],
     features: [
       "Stocked open shelving",
       "Coffee, snacks & drinks",
@@ -50,58 +81,104 @@ const services = [
       "No machine required",
       "Flexible billing options",
     ],
-    desc: "Keep your team fueled without the overhead. We stock and manage your break room pantry on a regular schedule so you never have to think about it.",
   },
+];
+
+const propertyTypes = [
+  { icon: "🏢", label: "Offices & Businesses" },
+  { icon: "🏠", label: "Apartment Communities" },
+  { icon: "🏨", label: "Hotels & Extended Stay" },
+  { icon: "🏥", label: "Healthcare & Medical" },
+  { icon: "🏭", label: "Manufacturing & Industrial" },
+  { icon: "🏫", label: "Schools & Institutions" },
 ];
 
 export default function ServicesPage() {
   return (
-    <>
-      <section className="bg-[#1B5E20] pt-32 pb-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <span className="text-xs font-semibold tracking-widest uppercase text-green-400 mb-4 block">Our Services</span>
-          <h1 className="text-5xl font-bold text-white mb-5">The Right Solution for Every Workplace</h1>
-          <p className="text-green-200 text-lg max-w-2xl mx-auto">
-            From a single smart cooler to a full micro market — we match your headcount and break room to the right solution, then handle everything else.
+    <main>
+      {/* HERO */}
+      <section className="page-hero">
+        <div className="container">
+          <p className="section-eyebrow">Our Services</p>
+          <h1 className="page-title">The Right Solution for Every Property</h1>
+          <p className="page-sub">
+            From a single smart cooler in an apartment lobby to a full micro market on a
+            corporate campus — we match your property to the right solution, then handle
+            everything else.
           </p>
         </div>
       </section>
 
-      <section className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-6 space-y-12">
-          {services.map((s, i) => (
-            <div key={s.title} className={`rounded-3xl border p-10 ${s.color} flex flex-col md:flex-row gap-10 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
-              <div className="flex-1">
-                <div className="text-5xl mb-4">{s.icon}</div>
-                <div className="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-2">{s.subtitle}</div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">{s.title}</h2>
-                <p className="text-gray-600 leading-relaxed mb-6">{s.desc}</p>
-                <Link href="/contact" className="inline-block bg-[#2E7D32] text-white font-semibold text-sm px-7 py-3 rounded-full hover:bg-[#1B5E20] transition-colors">
-                  Get Started →
-                </Link>
+      {/* WHO WE SERVE STRIP */}
+      <section className="section section-alt">
+        <div className="container">
+          <p className="section-eyebrow">Who We Serve</p>
+          <h2 className="section-title">We Serve More Than Just Offices</h2>
+          <p className="section-sub">
+            J-K-B Vending serves a wide range of properties across DFW —
+            anywhere people need fresh food and drinks on demand.
+          </p>
+          <div className="property-grid">
+            {propertyTypes.map((p) => (
+              <div key={p.label} className="property-tag">
+                <span>{p.icon}</span>
+                <span>{p.label}</span>
               </div>
-              <div className="flex-1 grid grid-cols-1 gap-3 content-start">
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICE CARDS */}
+      {services.map((s, i) => (
+        <section
+          key={s.title}
+          className={`section service-section ${i % 2 === 0 ? "" : "section-alt"}`}
+        >
+          <div className="container">
+            <div className="service-layout">
+              <div className="service-info">
+                <span className="service-icon">{s.icon}</span>
+                <p className="service-tag">{s.tag}</p>
+                <h2 className="service-title">{s.title}</h2>
+                <p className="service-desc">{s.description}</p>
+                <div className="service-best-for">
+                  <h4>Best For:</h4>
+                  <ul>
+                    {s.bestFor.map((b) => (
+                      <li key={b}>✓ {b}</li>
+                    ))}
+                  </ul>
+                </div>
+                <Link href="/contact" className="btn-primary">Get Started →</Link>
+              </div>
+              <div className="service-features">
+                <h4>What&apos;s Included:</h4>
                 {s.features.map((f) => (
-                  <div key={f} className="flex items-center gap-3 bg-white/70 rounded-xl px-4 py-3 text-sm font-medium text-gray-700">
-                    <span className="text-[#2E7D32] font-bold">✓</span>
-                    {f}
+                  <div key={f} className="feature-row">
+                    <span className="feature-check">✓</span>
+                    <span>{f}</span>
                   </div>
                 ))}
               </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
+      ))}
 
-      <section className="bg-[#F9FBF9] py-20 text-center">
-        <div className="max-w-2xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Not Sure Which Is Right for You?</h2>
-          <p className="text-gray-500 mb-8">Tell us about your team and we'll recommend the perfect solution — no pressure, no commitment.</p>
-          <Link href="/contact" className="inline-block bg-[#2E7D32] text-white font-bold px-10 py-4 rounded-full hover:bg-[#1B5E20] transition-colors">
-            Get a Free Consultation
+      {/* BOTTOM CTA */}
+      <section className="section cta-section">
+        <div className="container">
+          <h2 className="cta-title">Not Sure Which Is Right for You?</h2>
+          <p className="cta-sub">
+            Tell us about your property and we&apos;ll recommend the perfect solution —
+            no pressure, no long-term commitment.
+          </p>
+          <Link href="/contact" className="btn-primary btn-large">
+            Get a Free Consultation →
           </Link>
         </div>
       </section>
-    </>
+    </main>
   );
 }
