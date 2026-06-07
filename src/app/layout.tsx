@@ -1,23 +1,47 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
+  subsets: ["latin"],
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "J-K-B Vending | Smart Coolers & Micro Markets in DFW",
-  description: "Family-owned smart cooler and micro market operator serving DFW and Collin County. 25+ years of H-E-B grocery experience. Fresh, reliable, local.",
-  keywords: ["vending", "smart cooler", "micro market", "DFW vending", "Collin County vending", "Plano vending", "Frisco vending", "Wylie vending"],
+  title: {
+    default: "J-K-B Vending | Smart Coolers & Micro Markets in DFW",
+    template: "%s | J-K-B Vending",
+  },
+  description:
+    "Family-owned smart cooler and micro market operator serving DFW offices, apartment communities, hotels, and healthcare facilities. Local, fresh, free to your property.",
+  keywords: [
+    "vending",
+    "smart cooler",
+    "micro market",
+    "DFW vending",
+    "Collin County vending",
+    "apartment vending DFW",
+    "hotel vending DFW",
+    "Plano vending",
+    "Frisco vending",
+    "Wylie vending",
+    "McKinney vending",
+    "Richardson vending",
+  ],
   authors: [{ name: "J-K-B Vending" }],
   creator: "J-K-B Vending",
   metadataBase: new URL("https://www.jkbvending.com"),
   openGraph: {
     title: "J-K-B Vending | Smart Coolers & Micro Markets in DFW",
-    description: "Family-owned smart cooler and micro market operator serving DFW and Collin County. Fresh, reliable, local.",
+    description:
+      "Family-owned smart cooler and micro market operator serving DFW offices, apartment communities, hotels, and healthcare facilities. Fresh, reliable, local.",
     url: "https://www.jkbvending.com",
     siteName: "J-K-B Vending",
     images: [
@@ -34,7 +58,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "J-K-B Vending | Smart Coolers & Micro Markets in DFW",
-    description: "Family-owned smart cooler and micro market operator serving DFW and Collin County.",
+    description:
+      "Family-owned smart cooler and micro market operator serving DFW offices, apartment communities, hotels, and healthcare facilities.",
     images: ["/apple-touch-icon.png"],
   },
   icons: {
@@ -52,9 +77,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${dmSans.variable} ${playfair.variable} antialiased`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
