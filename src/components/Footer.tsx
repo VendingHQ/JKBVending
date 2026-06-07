@@ -47,13 +47,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
             >
-              <img
-                src="https://cdn.simpleicons.org/instagram/white"
-                alt="Instagram"
-                width={16}
-                height={16}
-              />
-              @jkbvending
+              @jkbvending on Instagram
             </a>
           </div>
 
